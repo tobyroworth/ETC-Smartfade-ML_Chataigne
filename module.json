@@ -1,0 +1,237 @@
+{
+  "name": "ETC Smartfade ML",
+  "type": "MIDI",
+  "path": "Console",
+  "version": "1.0.0",
+  "url": "https://github.com/tobyroworth/ETC-Smartfade-ML_Chataigne",
+  "downloadURL": "https://github.com/tobyroworth/ETC-Smartfade-ML_Chataigne/archive/refs/heads/main.zip",
+  "hideDefaultParameters": [
+    "autoAdd",
+    "octaveShift",
+    "usePitchForNoteNames"
+  ],
+  "defaults": {
+    "autoAdd": 0,
+    "ocataveShift": 0,
+    "usePitchForNoteNames": 0
+  },
+  "hideDefaultCommands": true,
+  "parameters": {
+    "MIDI Channel": {
+      "type": "Container",
+      "collapsed": false,
+      "Send": {
+        "type": "Integer",
+        "description": "MIDI Channel to send commands on",
+        "min": 1,
+        "max": 16
+      },
+      "Receive": {
+        "type": "Integer",
+        "description": "MIDI Channel to receive commands on",
+        "min": 1,
+        "max": 16
+      }
+    }
+  },
+  "scripts": [
+    "moduleScript.js"
+  ],
+  "values": {
+    "Live": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Next": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Bump Master": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Grand Master": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 1": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 2": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 3": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 4": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 5": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 6": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 7": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 8": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 9": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 10": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 11": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 12": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 13": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 14": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 15": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 16": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 17": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 18": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 19": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 20": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 21": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 22": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 23": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    },
+    "Fader 24": {
+      "type": "Integer",
+      "min": 0,
+      "max": 127
+    }
+  },
+  "commands": {
+    "Level": {
+      "callback": "setLevel",
+      "parameters": {
+        "Channel Type": {
+          "type": "Enum",
+          "options": {
+            "Fader": 0,
+            "Live": 124,
+            "Next": 125,
+            "Bump Master": 126,
+            "Grand Master": 127
+          }
+        },
+        "Channel": {
+          "type": "Integer",
+          "min": 1,
+          "max": 24,
+          "dependency": {
+            "source": "channelType",
+            "value": 0,
+            "check": "equals",
+            "action": "show"
+          }
+        },
+        "Level": {
+          "type": "Integer",
+          "min": 0,
+          "max": 127,
+          "default": 127
+        }
+      }
+    },
+    "Crossfade": {
+      "callback": "crossfade",
+      "parameters": {
+        "From": {
+          "type": "Integer",
+          "min": 1,
+          "max": 24
+        },
+        "To": {
+          "type": "Integer",
+          "min": 1,
+          "max": 24
+        },
+        "Time": {
+          "type": "Integer",
+          "description": "Fade in/out time in 10th of a second",
+          "min": 0,
+          "max": 127
+        }
+      }
+    }
+  }
+}
