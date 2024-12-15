@@ -8,7 +8,6 @@ function init() {
 }
 
 function update(deltaTime) {
-  script.log("Delta time : " + deltaTime);
   now += deltaTime * 1000;
   for (var i = 0; i < activeFades.length; i++) {
     var fade = activeFades[i];
@@ -55,6 +54,6 @@ function fade(channelNumber, start, end, timeMs, delayMs) {
 
 function crossfade(fromChannel, toChannel, time) {
   var timeMs = time * 100;
-  fade(fromChannel, 0, 127, timeMs, 0);
-  fade(toChannel, 127, 0, timeMs, timeMs);
+  fade(toChannel, 0, 127, timeMs, 0);
+  fade(fromChannel, 127, 0, timeMs, timeMs);
 }
