@@ -1,6 +1,9 @@
 var activeFades = [];
+var activeBumps = [];
 
 var now = 0;
+
+var bumpTime = 500;
 
 function init() {
   now = util.getTimestamp() * 1000;
@@ -30,6 +33,23 @@ function update(deltaTime) {
       setLevel(0, i, newValue);
     }
   }
+  for (var i = 0; i < activeBumps.length; i++) {
+    var bump = activeBumps[i];
+    if (bump) {
+      // var currentTime = now - bump.startTime;
+      // if (currentTime < 0) {
+      //   continue;
+      // }
+      if ((!bump.active) && now >= bump.startTime) {
+        sendBump(i, true);
+        bump.active = true;
+      } else if (bump.active && now >= bump.endTime) {
+        sendBump(i, false);
+        bump.active = false;
+        activeBumps[i] = null;
+      }
+    }
+  }
 }
 
 function setLevel(channelType, channelNumber, level) {
@@ -41,6 +61,17 @@ function setLevel(channelType, channelNumber, level) {
   local.sendCC(local.parameters.midiChannel.send.get(), channelNumber, level);
 }
 
+function sendBump(channelNumber, active) {
+
+  var note = channelNumber - 1; // convert 1-48 to 0-47
+
+  if (active) {
+    local.sendNoteOn(local.parameters.midiChannel.send.get(), note, 127);
+  } else {
+    local.sendNoteOff(local.parameters.midiChannel.send.get(), note);
+  }
+}
+
 function fade(channelNumber, start, end, timeMs, delayMs) {
   var now = util.getTimestamp() * 1000;
   activeFades[channelNumber] = {
@@ -49,6 +80,15 @@ function fade(channelNumber, start, end, timeMs, delayMs) {
     startValue: start,
     endValue: end,
     value: null
+  };
+}
+
+function bump(channelNumber) {
+  var now = util.getTimestamp() * 1000;
+  activeBumps[channelNumber] = {
+    startTime: now,
+    endTime: now + bumpTime,
+    active: false
   };
 }
 

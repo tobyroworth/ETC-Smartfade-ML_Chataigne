@@ -213,6 +213,17 @@
         }
       }
     },
+    "Bump": {
+      "menu": "Memory",
+      "callback": "bump",
+      "parameters": {
+        "Channel Number": {
+          "type": "Integer",
+          "min": 1,
+          "max": 48
+        }
+      }
+    },
     "Crossfade": {
       "menu": "Memory",
       "callback": "crossfade",
