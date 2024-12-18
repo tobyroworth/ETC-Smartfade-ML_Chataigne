@@ -57,3 +57,33 @@ function crossfade(fromChannel, toChannel, time) {
   fade(toChannel, 0, 127, timeMs, 0);
   fade(fromChannel, 127, 0, timeMs, timeMs);
 }
+
+function setPage(page) {
+  var programNumber = page + 99; //convert 1-12 to 100-111
+  local.sendProgramChange(local.parameters.midiChannel.send.get(), programNumber);
+}
+
+function resetStack() {
+  var programNumber = 0;
+  local.sendProgramChange(local.parameters.midiChannel.send.get(), programNumber);
+}
+
+function goStack(cue) {
+  var programNumber = cue;
+  local.sendProgramChange(local.parameters.midiChannel.send.get(), programNumber);
+}
+
+function pauseStack() {
+  var programNumber = 124;
+  local.sendProgramChange(local.parameters.midiChannel.send.get(), programNumber);
+}
+
+function startStack() {
+  var programNumber = 125;
+  local.sendProgramChange(local.parameters.midiChannel.send.get(), programNumber);
+}
+
+function blackout(on) {
+  var programNumber = on ? 127 : 126;
+  local.sendProgramChange(local.parameters.midiChannel.send.get(), programNumber);
+}

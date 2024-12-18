@@ -181,6 +181,7 @@
   },
   "commands": {
     "Level": {
+      "menu": "Memory",
       "callback": "setLevel",
       "parameters": {
         "Channel Type": {
@@ -213,6 +214,7 @@
       }
     },
     "Crossfade": {
+      "menu": "Memory",
       "callback": "crossfade",
       "parameters": {
         "From": {
@@ -230,6 +232,49 @@
           "description": "Fade in/out time in 10th of a second",
           "min": 0,
           "max": 127
+        }
+      }
+    },
+    "Memory Page": {
+      "menu": "Memory",
+      "callback": "setPage",
+      "parameters": {
+        "Page": {
+          "type": "Integer",
+          "min": 1,
+          "max": 12
+        }
+      }
+    },
+    "Reset": {
+      "menu": "Stack",
+      "callback": "resetStack"
+    },
+    "Goto": {
+      "menu": "Stack",
+      "callback": "gotoStack",
+      "parameters": {
+        "Cue": {
+          "type": "Integer",
+          "min": 1,
+          "max": 99
+        }
+      }
+    },
+    "Pause": {
+      "menu": "Stack",
+      "callback": "pauseStack"
+    },
+    "Start/GO": {
+      "menu": "Stack",
+      "callback": "startStack"
+    },
+    "Blackout": {
+      "menu": "Stack",
+      "callback": "blackout",
+      "parameters": {
+        "On": {
+          "type": "Boolean"
         }
       }
     }
