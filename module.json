@@ -32,7 +32,13 @@
         "min": 1,
         "max": 16
       }
-    }
+    },
+    "Bump Time": {
+        "type": "Integer",
+        "description": "Time (in ms) to hold bump for",
+        "min": 1,
+        "default": 500
+      }
   },
   "scripts": [
     "moduleScript.js"

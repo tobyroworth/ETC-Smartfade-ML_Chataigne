@@ -3,8 +3,6 @@ var activeBumps = [];
 
 var now = 0;
 
-var bumpTime = 500;
-
 function init() {
   now = util.getTimestamp() * 1000;
   script.setUpdateRate(127);
@@ -87,7 +85,7 @@ function bump(channelNumber) {
   var now = util.getTimestamp() * 1000;
   activeBumps[channelNumber] = {
     startTime: now,
-    endTime: now + bumpTime,
+    endTime: now + local.parameters.bumpTime.get(),
     active: false
   };
 }
