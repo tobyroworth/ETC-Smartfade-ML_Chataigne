@@ -269,7 +269,7 @@
     },
     "Goto": {
       "menu": "Stack",
-      "callback": "gotoStack",
+      "callback": "goStack",
       "parameters": {
         "Cue": {
           "type": "Integer",
