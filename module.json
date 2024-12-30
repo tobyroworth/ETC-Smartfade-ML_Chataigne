@@ -46,141 +46,169 @@
   "values": {
     "Live": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Next": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Bump Master": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Grand Master": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 1": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 2": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 3": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 4": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 5": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 6": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 7": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 8": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 9": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 10": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 11": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 12": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 13": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 14": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 15": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 16": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 17": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 18": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 19": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 20": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 21": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 22": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 23": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     },
     "Fader 24": {
       "type": "Integer",
+      "readOnly": true,
       "min": 0,
       "max": 127
     }

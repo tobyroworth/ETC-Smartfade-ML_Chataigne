@@ -8,6 +8,32 @@ function init() {
   script.setUpdateRate(127);
 }
 
+function ccEvent(channel, controllerNumber, newVal) {
+  if (channel !== local.parameters.midiChannel.receive.get()) {
+    return;
+  }
+
+  var value = null;
+
+  if (controllerNumber == 124) {
+    value = local.values.live;
+  } else if (controllerNumber == 125) {
+    value = local.values.next;
+  } else if (controllerNumber == 126) {
+    value = local.values.bumpMaster;
+  } else if (controllerNumber == 127) {
+    value = local.values.grandMaster;
+  } else if (controllerNumber <= 24) {
+    value = local.values['fader' + controllerNumber];
+  }
+
+  if (!value) {
+    return;
+  }
+
+  value.set(newVal);
+}
+
 function update(deltaTime) {
   now += deltaTime;
   for (var i = 0; i < activeFades.length; i++) {
