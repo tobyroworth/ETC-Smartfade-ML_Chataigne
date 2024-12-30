@@ -35,6 +35,7 @@
     },
     "Bump Time": {
         "type": "Float",
+        "ui": "time",
         "description": "Time (in s) to hold bump for",
         "min": 0.1,
         "default": 0.5
@@ -274,6 +275,7 @@
         },
         "Time": {
           "type": "Float",
+          "ui": "time",
           "description": "Fade in/out time in seconds",
           "min": 0
         }
