@@ -2,7 +2,7 @@
   "name": "ETC Smartfade ML",
   "type": "MIDI",
   "path": "Console",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "url": "https://github.com/tobyroworth/ETC-Smartfade-ML_Chataigne",
   "downloadURL": "https://github.com/tobyroworth/ETC-Smartfade-ML_Chataigne/archive/refs/heads/main.zip",
   "hideDefaultParameters": [
@@ -34,10 +34,10 @@
       }
     },
     "Bump Time": {
-        "type": "Integer",
-        "description": "Time (in ms) to hold bump for",
-        "min": 1,
-        "default": 500
+        "type": "Float",
+        "description": "Time (in s) to hold bump for",
+        "min": 0.1,
+        "default": 0.5
       }
   },
   "scripts": [
@@ -245,10 +245,9 @@
           "max": 24
         },
         "Time": {
-          "type": "Integer",
-          "description": "Fade in/out time in 10th of a second",
-          "min": 0,
-          "max": 127
+          "type": "Float",
+          "description": "Fade in/out time in seconds",
+          "min": 0
         }
       }
     },

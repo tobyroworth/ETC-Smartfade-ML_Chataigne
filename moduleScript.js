@@ -4,12 +4,12 @@ var activeBumps = [];
 var now = 0;
 
 function init() {
-  now = util.getTimestamp() * 1000;
+  now = util.getTimestamp();
   script.setUpdateRate(127);
 }
 
 function update(deltaTime) {
-  now += deltaTime * 1000;
+  now += deltaTime;
   for (var i = 0; i < activeFades.length; i++) {
     var fade = activeFades[i];
     if (fade) {
@@ -70,11 +70,11 @@ function sendBump(channelNumber, active) {
   }
 }
 
-function fade(channelNumber, start, end, timeMs, delayMs) {
-  var now = util.getTimestamp() * 1000;
+function fade(channelNumber, start, end, time, delay) {
+  var now = util.getTimestamp();
   activeFades[channelNumber] = {
-    startTime: now + delayMs,
-    endTime: now + delayMs + timeMs,
+    startTime: now + delay,
+    endTime: now + delay + time,
     startValue: start,
     endValue: end,
     value: null
@@ -82,7 +82,7 @@ function fade(channelNumber, start, end, timeMs, delayMs) {
 }
 
 function bump(channelNumber) {
-  var now = util.getTimestamp() * 1000;
+  var now = util.getTimestamp();
   activeBumps[channelNumber] = {
     startTime: now,
     endTime: now + local.parameters.bumpTime.get(),
@@ -91,9 +91,8 @@ function bump(channelNumber) {
 }
 
 function crossfade(fromChannel, toChannel, time) {
-  var timeMs = time * 100;
-  fade(toChannel, 0, 127, timeMs, 0);
-  fade(fromChannel, 127, 0, timeMs, timeMs);
+  fade(toChannel, 0, 127, time, 0);
+  fade(fromChannel, 127, 0, time, time);
 }
 
 function setPage(page) {
