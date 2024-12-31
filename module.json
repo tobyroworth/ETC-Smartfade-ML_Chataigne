@@ -2,7 +2,8 @@
   "name": "ETC Smartfade ML",
   "type": "MIDI",
   "path": "Console",
-  "version": "2.0.0",
+  "version": "2.0.1",
+  "description": "Adds support for ETC Smartfade ML to Chataigne] using MIDI in/out. Based on the 'Basic MIDI Implementation'",
   "url": "https://github.com/tobyroworth/ETC-Smartfade-ML_Chataigne",
   "downloadURL": "https://github.com/tobyroworth/ETC-Smartfade-ML_Chataigne/archive/refs/heads/main.zip",
   "hideDefaultParameters": [
